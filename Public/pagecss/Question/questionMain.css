@@ -1,0 +1,365 @@
+.page-main {
+	min-height: 340px;
+	padding: 25px 0 50px;
+	position: relative;
+	z-index: 2;
+	width: 960px;
+	margin: 0 auto;
+	clear: both;
+}
+.page-content {
+	float: left;
+	width: 100%;
+}
+.page-content-inner {
+	margin: 0 328px 48px 48px;
+}
+.meta-item.stamp {
+	float: right;
+	padding-right: 10px;
+	color: #999;
+	margin-bottom: 0px;
+}
+
+.question-title {
+	margin: 0 0 5px;
+}
+.question-title>.item-title {
+	font-size: 18px;
+	display: inline;
+	margin: 0;
+}
+.question-detail{
+	margin-bottom: 5px;
+}
+.answers-title {
+	position: relative;
+	padding: 10px 0;
+	line-height: 24px;
+	border-top: 1px solid #EEE;
+}
+.answers-sorter {
+	overflow: hidden;
+	height: 24px;
+	position: absolute;
+	right: -9px;
+	background: #fff;
+}
+.answers-sorter .lbl, .answers-sorter a.lbl {
+	padding: 0 19px 0 7px;
+	text-decoration: none;
+	display: block;
+	color: #999;
+	font-size: 10px;
+}
+.answers-sorter:hover {
+	overflow: visible;
+	z-index: 1;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	height: auto;
+}
+.answers-sorter a:hover {
+	background-color: #EEE;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.answers-title h3 {
+	margin: 0;
+	display: inline;
+	font-size: 15px;
+}
+.question-answer-wrap {
+	border-bottom: 1px solid #EEE;
+}
+.question-answer-wrap>.item-answer {
+	padding: 10px 0 5px;
+	border-top: 1px solid #eee;
+	margin-left: 0;
+	position: relative;
+	outline: 0;
+}
+.votebar {
+	float: left;
+	margin-left: -48px;
+	display: block;
+}
+.votebar .up {
+	height: 44px;
+	display: block;
+	color: #698ebf;
+	line-height: 24px;
+	width: 38px;
+	border-radius: 3px;
+	border: 0;
+	cursor: pointer;
+	background: #eff6fa;
+	font-weight: 500;
+	position: relative;
+	font-size: 13px;
+	padding: 0;
+	margin: 0;
+}
+.votebar .down {
+	display: block;
+	color: #698ebf;
+	height: 24px;
+	line-height: 24px;
+	width: 38px;
+	border-radius: 3px;
+	border: 0;
+	cursor: pointer;
+	background: #eff6fa;
+	font-weight: 500;
+	position: relative;
+	margin: 5px 0 0;
+}
+.votebar .up:hover,.votebar .down:hover{
+	background: #285CA1;
+	color: #fff;
+}
+.votebar .label {
+	display: block;
+	text-indent: -9999px;
+}
+.votebar .count {
+	position: absolute;
+	top: 18px;
+	left: -1px;
+	width: 100%;
+}
+.down-icon {
+	left: -1px;
+}
+.item-answer .answer-head {
+	min-height: 25px;
+}
+.item-answer-author-wrap {
+	margin: 0 0 1px;
+	font-size: 13px;
+}
+.item-answer .item-link-avatar {
+	float: right;
+	height: 25px;
+	width: 25px;
+}
+.list-avatar {
+	float: left;
+	height: 25px;
+	width: 25px;
+	border: 0 none;
+	border-radius: 2px;
+}
+.item-vote-info {
+	display: block;
+	margin: 3px 0;
+	font-size: .9em;
+	color: #999;
+}
+.item-vote-info .voters {
+	display: inline;
+}
+.item-vote-info a {
+	color: inherit;
+	font-size: inherit;
+}
+.comment-box {
+	margin: 10px 0 35px;
+	background: #fff;
+	max-width: 540px;
+	position: relative;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.bubble {
+	color: #ddd;
+	display: inline;
+	left: 35px;
+	position: absolute;
+	top: -10px;
+	width: 13px;
+	height: 8px;
+}
+.bubble-mask {
+	color: #FFF;
+	display: inline;
+	left: 35px;
+	position: absolute;
+	top: -9px;
+	width: 13px;
+	height: 8px;
+}
+.item-comment {
+	position: relative;
+	margin: 0 12px;
+	padding: 8px 0;
+}
+.item-comment>.item-link-avatar {
+	float: left;
+	margin: 4px 0 0;
+}
+.item-comment .comment-content-wrap {
+	margin: 0 0 0 35px;
+}
+.comment-content {
+	color: #222;
+	min-height: 22px;
+}
+.item-comment+.item-comment {
+	border-top: solid 1px #eee;
+}
+.minicomment {
+	display: none;
+}
+.comment-box .comment-list .item-comment:hover .minicomment {
+	display: block;
+}
+
+.comment-box .comment-list .item-comment:hover .minicomment.mask {
+	display: none;
+}
+
+.item-comment .comment-form {
+	padding: 15px 0;
+}
+.comment-edit-wrap {
+	padding: 7px 8px;
+	font-size: 13px;
+	line-height: 22px;
+	min-height: 22px;
+	white-space: pre-wrap;
+	color: #222;
+	cursor: text;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.1) inset;
+	background-color: #fff;
+}
+div[contentEditable] {
+	outline: 0;
+	-moz-outline: 0;
+}
+p {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	padding: 0;
+	margin: 0;
+}
+.command {
+	display: none;
+	line-height: 33px;
+	padding-bottom: 0;
+	padding: 10px 0;
+	text-align: right;
+}
+.command-cancel {
+	float: right;
+	margin: 0 15px 0 0;
+	padding-top: 7px;
+	cursor: pointer;
+	text-align: right;
+}
+.minibox {
+	margin-top: 5px;
+	display: none;
+}
+.last-edit-box {
+	background: #FAFAFA;
+	margin: 0 2px 0 2px;
+}
+.main-sidebar {
+	float: left;
+	margin: 0 0 0 -270px;
+	width: 270px;
+}
+.side-section {
+	margin-bottom: 15px;
+	position: relative;
+}
+.side-nav-group:first-child {
+	margin-top: -4px;
+}
+.side-nav-group {
+	margin-bottom: 10px;
+}
+.side-nav {
+	margin-left: -10px;
+}
+.side-nav li {
+	position: relative;
+}
+.side-nav-li {
+	display: block;
+	margin-bottom: 3px;
+	list-style: none;
+	position: relative;
+}
+.side-nav-link {
+	padding: 0 0 0 10px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #666;
+}
+.side-nav-link:hover {
+	color: #259;
+	background: #eff6fa;
+	border-radius: 3px;
+	text-decoration: none;
+}
+.modal-backdrop {
+	z-index: -1;
+	visibility: hidden;
+}
+.modal-dialog {
+	margin-top: 150px;
+}
+.note-editor.fullscreen {
+	margin-top: 50px;
+}
+.question-answer-form-wrap {
+	margin-top: 10px;
+	border-top: 1px solid #EEE;
+	padding-top: 10px;
+}
+.question-answer-form-wrap .command {
+	display: block;
+}
+.answer-form {
+	margin-bottom: 10px;
+}
+.question-answer-form-wrap .item-link-avatar{
+	float: right;
+}
+.editor-box {
+	padding-top: 10px;
+}
+.note-editor {
+	border-radius: 4px;
+}
+.note-toolbar {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.note-statusbar {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.question-author-wrap .item-link-avatar{
+	float: left;
+	margin-right: 10px;
+}
+.question-author-wrap {
+	margin-top: 20px;
+}
+.main-page-nav-top{
+	float: right;
+}
+.main-page-nav-top>a{
+	text-decoration: none;
+	font-size: 7px;
+}

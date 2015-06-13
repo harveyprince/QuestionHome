@@ -1,0 +1,60 @@
+<div class="feed-item">
+	<div class="feed-item-inner">
+		<div class="avatar">
+			<a href="">
+				<img src="http://harveyphp.qiniudn.com/'+data['item']['head_icon']+'">
+			</a>
+		</div>
+		<div class="feed-main">
+			<div class="source">
+				发表了问题
+				<span class="time">'+getLocaleTime(data['item']['time'])+'</span>
+			</div>
+			<div class="content">
+				<h2 class="subtitlesection">'+data['item']['title']+'</h2>
+				<div class="entry-body">
+					<div class="item-vote" style="display:block;">
+						<a name="expand" class="item-vote-count" href="" data-votecount="">'+data['item']['score']+'</a>
+					</div>
+					<div class="item-answer-detail">
+						<div class="item-answer-author-info">
+							<h3 class="item-answer-author-wrap">
+								<a href="">'+data['item']['surname']+data['item']['purename']+'</a>
+							</h3>
+						</div>
+						<div class="item-rich-text">
+							<div class="zh-summary clearfix" style="display:block;">
+								<span class="questioncontent" data-inner="'+data['item']['content']+'"></span>
+								<a class="toggle-expand" href="/Question/Index/questionContent/question/'+data['item']['id']+'.html">显示全部</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="feed-meta">
+					<div class="item-meta clearfix">
+						<div class="meta-panel">
+							<a href="/Question/Index/questionContent/question/'+data['item']['id']+'.html" name="addcomment" class="meta-item toggle-comment">
+								<span class="glyphicon glyphicon-comment"></span>
+								'+answernum+'条评论
+							</a>
+							<a href="/Question/Index/questionContent/question/'+data['item']['id']+'.html" name="addgood" class="meta-item toggle-good">
+								<span class="glyphicon glyphicon-heart"></span>
+								'+questionvotenum+'个支持
+							</a>
+							<span name="taglist" id="singletag">
+							</span>
+							<a href="javascript:;" class="meta-item autohide questionup" url="/Question/Index/voteQuestion.html" target-question-id="'+data['item']['id']+'">
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+								点赞
+							</a>
+							<a href="javascript:;" class="meta-item autohide questiondown" url="/Question/Index/voteQuestion.html" target-question-id="'+data['item']['id']+'">
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+								踩
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

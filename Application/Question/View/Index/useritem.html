@@ -1,0 +1,105 @@
+<div class="profile-header">
+	<div class="profile-header-main">
+		<div class="top">
+			<div class="topdescribe">
+				<span class="name">{:W('Question/getUserNameByID',array($id))}</span>
+				，
+				<span class="info-wrap persondes">
+					<if condition="W('Question/getUserInfoByID',array($id))['short_description']">
+					<span class="short_descriptionInfo">{:W('Question/getUserInfoByID',array($id))['short_description']}</span>	
+					<else/>	
+					<span class="short_descriptionInfo">暂无一句话介绍</span>									
+					</if>			
+				</span>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="profile-header-avatar-container">
+				<img alt="{:W('Question/getUserNameByID',array($id))}" src="{:W('Question/getUserHeadIcon',array($id))}" class="profile-header-img">
+
+			</div>
+			<div class="profile-header-info">
+				<div class="profile-header-info-inner">
+					<div class="items">
+						<div class="item">
+							<span class="glyphicon glyphicon-globe icon-nav"></span>
+							<span class="info-wrap location">
+								<span class="location item">
+
+									<if condition="W('Question/getUserInfoByID',array($id))['location'] eq null">
+										<a class="link-blue-normal locationInfo" href="">居住地</a>
+										<else/>
+										<a class="link-blue-normal locationInfo" href="">{:W('Question/getUserInfoByID',array($id))['location']}</a>
+									</if>
+								</span>
+								<span class="business item">
+									<if condition="W('Question/getUserInfoByID',array($id))['subject'] eq null">
+										<a class="topic-link subjectInfo" href="">学科专业</a>
+										<else/>
+										<a class="topic-link subjectInfo" href="">{:W('Question/getUserInfoByID',array($id))['subject']}</a>
+									</if>												
+								</span>
+								<if condition="W('Question/getUserInfoByID',array($id))['sex'] eq null"><span class="item small-text sexInfo">性别</span>
+									<else/><span class="item small-text sexInfo">{:W('Question/getUserInfoByID',array($id))['sex']}</span>
+								</if>																		
+							</span>
+						</div>
+						<div class="item">
+							<span class="glyphicon glyphicon-briefcase icon-nav"></span>
+							<span class="info-wrap school">
+								<span class="location item">
+									<if condition="W('Question/getUserInfoByID',array($id))['school'] eq null"><a class="link-blue-normal schoolInfo" href="">学校</a>
+										<else/><a class="link-blue-normal schoolInfo" href="">{:W('Question/getUserInfoByID',array($id))['school']}</a>
+									</if>												
+								</span>
+								<span class="business item">
+									<if condition="W('Question/getUserInfoByID',array($id))['academy'] eq null"><a class="topic-link academyInfo" href="">学院</a>
+										<else/><a class="topic-link academyInfo" href="">{:W('Question/getUserInfoByID',array($id))['academy']}</a>
+									</if>											
+								</span>
+							</span>
+						</div>
+					</div>
+					<div class="profile-header-description">
+						<span class="info-wrap description">
+							<div class="fold-item">
+								<if condition="W('Question/getUserInfoByID',array($id))['long_description'] eq null"><span class="content long_descriptionInfo">个人详细描述</span>
+									<else/><span class="content long_descriptionInfo">{:W('Question/getUserInfoByID',array($id))['long_description']}</span>
+								</if>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="profile-header-operation">
+		<div class="profile-header-info-list">
+			<span class="profile-header-info-title">获得</span>
+			<span class="profile-header-user-agree">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+				<strong>{:W('Question/getUserAgreeVoteByID',array($id))}</strong>
+				赞同
+			</span>
+			<span class="profile-header-user-disagree">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+				<strong>{:W('Question/getUserDisagreeVoteByID',array($id))}</strong>
+				反对
+			</span>
+		</div>
+		<a href="" class="score">积分:{:W('Question/getUserScoreByID',array($id))}</a>
+	</div>
+	<div class="profile-navbar clearfix">
+		<a href="{:U('__ROOT__/User/Index/userpage/user/'.$id)}" class="item first home">
+			<span class="glyphicon glyphicon-home"></span>
+		</a>
+		<a href="{:U('__ROOT__/User/Index/userpage_questionTab/user/'.$id)}" class="item">
+			提问
+			<span class="num">{:W('Question/getUserQuestionNumByID',array($id))}</span>
+		</a>
+		<a href="{:U('__ROOT__/User/Index/userpage_answerTab/user/'.$id)}" class="item">
+			回答
+			<span class="num">{:W('Question/getUserAnswerNumByID',array($id))}</span>
+		</a>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="feed-item list-group-item">
+	<div class="feed-item-inner">
+		<div class="avatar">
+			<a href="{:U('__ROOT__/User/Index/userpage/user/'.W('Home/getQuestion',array($id))['author_id'])}" class="item-head-home">
+				<img class="img-circle" src="{:W('Home/getQuestionAuthorHeadIcon',array($id))}">
+				<span class="author-name">{:W('Home/getQuestionAuthor',array($id))}</span>
+			</a>
+			<span style="font-size:10px;">发表了问题</span>
+		</div>
+		<a class="title-item" href="{:U('__ROOT__/Question/Index/questionContent/question/'.$id)}"><h4 class="list-group-item-heading">{:W('Home/getQuestion',array($id))['title']}</h4></a>
+	</div>
+</div>

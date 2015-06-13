@@ -1,0 +1,40 @@
+<extend name="welcomepage"/>
+<block name="injectedjs">
+	<script src="__PUBLIC__/pagejs/Home/home.js"></script>
+</block>
+<block name="logincontent">
+	<div class="box login">
+		<div class="top-tip">
+			<span class="operation-tip">注册帐号</span>
+			<a href="javascript:void(0);" class="action-tip right">
+				登录
+				<span class="glyphicon glyphicon-circle-arrow-right"></span>
+			</a>
+		</div>
+		<form class="signup-box">
+			<input id="signup_surname" autocomplete="off" arja-haspopup="true" type="text" value class="form-text-input signupfirstname" placeholder="姓氏"></input>
+			<input id="signup_purename" autocomplete="off" arja-haspopup="true" type="text" value class="form-text-input required signupname" placeholder="名称"></input>
+			<input id="signup_email" autocomplete="off" arja-haspopup="true" type="email" value class="form-text-input required verticaldown" placeholder="邮箱"></input>
+			<input id="signup_password" autocomplete="off" arja-haspopup="true" type="password" value class="form-text-input required verticaldown" placeholder="密码"></input>
+			<div class="alarmbox signup"></div>
+			<a href="javascript:void(0);" url="__ROOT__/User/Index/signupController" class="button-more btn-regist">注册</a>
+		</form>
+	</div>
+</block>
+<block name="signupcontent">
+	<div class="box signup active">
+		<div class="top-tip">
+			<span class="operation-tip">登录</span>
+			<a href="javascript:void(0);" class="action-tip left">
+				注册
+				<span class="glyphicon glyphicon-circle-arrow-left"></span>
+			</a>
+		</div>
+		<form class="signup-box">
+			<input id="login_email" autocomplete="off" arja-haspopup="true" type="email" value class="form-text-input required verticaldown" placeholder="邮箱"></input>
+			<input id="login_password" autocomplete="off" arja-haspopup="true" type="password" value class="form-text-input required verticaldown" placeholder="密码"></input>
+			<div class="alarmbox login"></div>
+			<a href="javascript:void(0);" url="__ROOT__/User/Index/loginController" class="button-more btn-login">登录</a>
+		</form>
+	</div>
+</block>

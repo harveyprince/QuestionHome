@@ -1,0 +1,41 @@
+.main-sidebar {
+	float: left;
+	margin: 0 0 0 -270px;
+	width: 270px;
+}
+
+.side-section {
+	margin-bottom: 15px;
+	position: relative;
+}
+.side-nav-group:first-child {
+	margin-top: -4px;
+}
+.side-nav-group {
+	margin-bottom: 10px;
+}
+.side-nav {
+	margin-left: -10px;
+}
+.side-nav li {
+	position: relative;
+}
+.side-nav-li {
+	display: block;
+	margin-bottom: 3px;
+	list-style: none;
+	position: relative;
+}
+.side-nav-link {
+	padding: 0 0 0 10px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #666;
+}
+.side-nav-link:hover {
+	color: #259;
+	background: #eff6fa;
+	border-radius: 3px;
+	text-decoration: none;
+}

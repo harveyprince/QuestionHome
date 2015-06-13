@@ -1,0 +1,11 @@
+<div class="profile-section-item clearfix">
+	<a href="javascript:void(0);" class="profile-vote-count delete-draft" did="{$id}" delete-url="{:U('__ROOT__/Question/Index/deleteQuestion')}">
+		<span class="glyphicon glyphicon-trash"></span>
+		<div class="profile-vote-type">删除</div>
+	</a>
+	<div class="profile-section-main">
+		<div class="profile-question">
+			<a href="{:U('__ROOT__/Question/Index/modifyQuestion').'?questionid='.$id}" class="question_link">{:W('User/getDraft',array($id))['title']}</a>
+		</div>
+	</div>
+</div>

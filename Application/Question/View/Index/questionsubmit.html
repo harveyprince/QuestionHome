@@ -1,0 +1,80 @@
+<extend name="questionlayout"/>
+<block name="injectedcss">
+	<link href="__PUBLIC__/pagecss/Question/questionsubmit.css" rel="stylesheet">
+	<link href="__PUBLIC__/pace/themes/black/pace-theme-barber-shop.css" rel="stylesheet" />
+</block>
+<block name="injectedjs">
+	<script src="__PUBLIC__/pagejs/Question/questionsubbase.js"></script>
+	<script src="__PUBLIC__/pagejs/Question/questionsubmit.js"></script>
+	<script data-pace-options='{"ajax":true,"startOnPageLoad":false}' src="__PUBLIC__/pace/pace.min.js"></script>
+	<script src="__PUBLIC__/pagejs/Common/summernoteupload.js"></script>
+</block>
+<block name="content">
+	<div class="page-main">
+		<div class="page-content">
+			<div class="page-content-inner">
+				<div class="question-title">
+					<h2 class="question-title-label">标题</h2>
+					<div class="title-box">
+						<input autocomplete="off" arja-haspopup="true" type="text" name="questiontitle" value class="form-text-input questiontitle" placeholder="标题"></input>
+					</div>
+				</div>
+				<div class="question-tags">
+					<h2 class="question-tags-label">标签</h2>
+					<div class="question-tags-sublabel">(至多添加五个)</div>
+					<div class="tag-section">
+						<div class="tag-section-inner clearfix">
+							<div class="meta-panel">
+								<span class="tags-box">
+								</span>
+								<a href="javascript:;" onclick="showbox_add_tag(this)" class="tags-add-button">
+									<span class="glyphicon glyphicon-plus"></span>
+								</a>
+								<span class="add-tag-box" style="display:none;">
+									<input autocomplete="off" arja-haspopup="true" type="text" name="add_tag_box" value class="form-text-input add_tag_box" placeholder="标签"></input>
+									<a href="javascript:;" onclick="add_tag(this)" class="add-tag-confirm">
+										<span class="glyphicon glyphicon-ok"></span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="question-main-editor">
+					<h2 class="question-content-label">内容</h2>
+					<div class="question-editor-box">
+						<div id="summernote" token="{$token}" aid="{$aid}" url-head="{$url_head}"></div>
+					</div>
+					<div class="command clearfix">
+						<button href="javascript:;" url="{:U('__ROOT__/Question/Index/submitQuestion')}" class="top-add-question submit-question-text" style="float:right;" status="">发表</button>
+						<span class="save-box">
+							<a href="javascript:;" url="{:U('__ROOT__/Question/Index/saveQuestion')}" class="saveQuestion" status="">保存草稿</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-sidebar">
+			<div class="side-section">
+				<div class="side-section-inner">
+					<div class="side-nav-group">
+						<if condition="$Think.session.harvey_user_id gt 0">
+							<u1 class="side-nav">
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/draftTab')}" class="side-nav-link">我的草稿</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/questionTab')}" class="side-nav-link">我的发布</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/answerTab')}" class="side-nav-link">我的回答</a>
+								</li>
+							</u1>
+						</if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</block>

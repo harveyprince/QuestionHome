@@ -1,0 +1,29 @@
+.tags {
+	color: #566e76 !important;
+	font-size: 11px;
+	font-weight: normal;
+	display: inline-block;
+	background-color: #f7fdff;
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: visible;
+	margin: 0px 0px 0px 5px;
+	padding: .1em .0em;
+	line-height: 1.4;
+	border: 1px solid #c0d4db;
+	border-radius: 15px;
+}
+.tags>a {
+	padding: 4px 10px 2px 10px;
+}
+.tags:hover {
+	background-color: #2D373A !important;
+}
+.tags>a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tag-section {
+	margin: 0 0 15px;
+	display: block;
+}

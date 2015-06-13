@@ -1,0 +1,69 @@
+<div class="feed-item">
+	<div class="feed-item-inner">
+		<div class="avatar">
+			<a href="{:U('__ROOT__/User/Index/userpage/user/'.W('Question/getQuestion',array($id))['author_id'])}">
+				<img src="{:W('Question/getQuestionAuthorHeadIcon',array($id))}">
+			</a>
+		</div>
+		<div class="feed-main">
+			<div class="source">
+				发表了问题
+				<span class="time"><?php echo date("Y-m-d H:i:s",W('Question/getQuestion',array($id))['time']) ?></span>
+			</div>
+			<div class="content">
+				<h2 class="subtitlesection">{:W('Question/getQuestion',array($id))['title']}</h2>
+				<div class="entry-body">
+					<div class="item-vote" style="display:block;">
+						<a name="expand" class="item-vote-count" href="" data-votecount="">{:W('Question/getUserScore',array($id))}</a>
+					</div>
+					<div class="item-answer-detail">
+						<div class="item-answer-author-info">
+							<h3 class="item-answer-author-wrap">
+								<a href="{:U('__ROOT__/User/Index/userpage/user/'.W('Question/getQuestion',array($id))['author_id'])}">{:W('Question/getAuthor',array($id))}</a>
+							</h3>
+						</div>
+						<div class="item-rich-text">
+							<div class="zh-summary clearfix" style="display:block;">
+								<if condition="W('Question/getShortQuestion',array($id))['image']">
+									<img class="short-image" src="{:W('Question/getShortQuestion',array($id))['image']}">
+								</if>
+								<if condition="W('Question/getShortQuestion',array($id))['video']">
+									{:W('Question/getShortQuestion',array($id))['video']}
+								</if>
+								<span class="questioncontent">{:W('Question/getShortQuestion',array($id))['content']}</span>
+								<a class="toggle-expand" href="{:U('__ROOT__/Question/Index/questionContent/question/'.$id)}">显示全部</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="feed-meta">
+					<div class="item-meta clearfix">
+						<div class="meta-panel">
+							<a href="{:U('__ROOT__/Question/Index/questionContent/question/'.$id)}" name="addcomment" class="meta-item toggle-comment">
+								<span class="glyphicon glyphicon-comment"></span>
+								{:W('Question/getAnswerNum',array($id))}条评论
+							</a>
+							<a href="{:U('__ROOT__/Question/Index/questionContent/question/'.$id)}" name="addgood" class="meta-item toggle-good">
+								<span class="glyphicon glyphicon-heart"></span>
+								{:W('Question/getVoteNum',array($id))}个支持
+							</a>
+							<volist name="taglist" id="singletag">
+								<div class="meta-item tags">
+									<a href="{:U('__ROOT__/Question/Index/Search').'?search-key='.$singletag['tag']}">{$singletag['tag']}</a>
+								</div>
+							</volist>
+							<a href="javascript:;" class="meta-item autohide questionup" url="{:U('__ROOT__/Question/Index/voteQuestion')}" target-question-id="{$id}">
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+								点赞
+							</a>
+							<a href="javascript:;" class="meta-item autohide questiondown" url="{:U('__ROOT__/Question/Index/voteQuestion')}" target-question-id="{$id}">
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+								踩
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

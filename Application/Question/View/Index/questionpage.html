@@ -1,0 +1,62 @@
+<extend name="questionlayout"/>
+<block name="summernote"></block>
+<block name="injectedcss">
+	<link href="__PUBLIC__/pagecss/Question/question.css" rel="stylesheet">
+</block>
+<block name="injectedjs">
+	<script src="__PUBLIC__/pagejs/Question/question.js"></script>
+</block>
+<block name="content">
+	<div class="page-content" role="main">
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="subheader">
+					<div>
+						<span class="glyphicon glyphicon-list icon-nav"></span>
+						最新动态
+					</div>
+					<div class="har-tabs">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="{:U('__ROOT__/Question/Index/index')}">最新</a>
+							</li>
+							<li class="">
+								<a href="{:U('__ROOT__/Question/Index/questionHot')}">热门</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="main-feed-con navigable" data-feedtype="topstory" data-widget="navigable">
+					<volist name="questionlist" id="singlequestionitem">
+						{:W('Question/questionitem',array($singlequestionitem['id']))}
+						<div class="divider"></div>
+					</volist>
+					
+					<a href="javascript:;" page="1" url="{:U('__ROOT__/Question/Index/questionMore')}" class="button-more question-more">更多</a>
+				</div>
+			</div>
+		</div>
+		<div class="main-sidebar">
+			<div class="side-section">
+				<div class="side-section-inner">
+					<div class="side-nav-group">
+						<if condition="$Think.session.harvey_user_id gt 0">
+							<u1 class="side-nav">
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/draftTab')}" class="side-nav-link">我的草稿</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/questionTab')}" class="side-nav-link">我的发布</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/answerTab')}" class="side-nav-link">我的回答</a>
+								</li>
+							</u1>
+						</if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>

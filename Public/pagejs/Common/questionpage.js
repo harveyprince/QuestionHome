@@ -1,0 +1,25 @@
+$(function(){
+	$(".to-submit-question").click(function(){
+		window.location.href=$(this).attr("link-address");
+	});
+	$(".questionup").click(function(){
+		$.post($(this).attr('url'),{
+			questionid:$(this).attr('target-question-id'),
+			votetype:1
+		},function(data,status){
+			if(data){
+				location.reload();
+			}
+		});
+	});
+	$(".questiondown").click(function(){
+		$.post($(this).attr('url'),{
+			questionid:$(this).attr('target-question-id'),
+			votetype:-1
+		},function(data,status){
+			if(data){
+				location.reload();
+			}
+		});
+	});
+});

@@ -1,0 +1,64 @@
+body{
+	background: #282828;
+}
+.cover {
+	width: 100%;
+}
+.centerbox {
+	position: relative;
+	margin-left: 40%;
+	margin-right:40%;
+}
+.verticalcenter {
+	margin-top: 50%;
+}
+.verticaldown {
+	margin-top: 20px;
+}
+
+.hot-question-list img{
+	width: 38px;
+	height: 38px;
+}
+.hot-question-list{
+	position: absolute;
+	height: 100%;
+	margin-top: -46px;
+	width: 280px;
+}
+.list-group-item-heading{
+	margin-left: 38px;
+}
+.author-name{
+	padding-left: 10px;
+	font-size: 17px;
+	font-weight: bold;
+	padding-right: 5px;
+}
+.avatar>a{
+	text-decoration: none;
+}
+.feed-item-inner .title-item{
+	text-decoration: none;
+	color: #000;
+}
+.hot-question-list{
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #FAFAFA;
+	border: 1px solid #ddd;
+}
+.pagehead{
+	position: absolute;
+	right: 110px;
+	top:220px;
+}
+.pagehead.pagetext{
+	margin-top: 100px;
+}
+.hot-question-icon{
+	position: absolute;
+	bottom: 15px;
+	margin-left: 15px;
+}

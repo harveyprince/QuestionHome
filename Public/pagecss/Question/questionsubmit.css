@@ -1,0 +1,104 @@
+.page-main {
+	min-height: 340px;
+	padding: 25px 0 50px;
+	position: relative;
+	z-index: 2;
+	width: 960px;
+	margin: 0 auto;
+	clear: both;
+}
+.page-content {
+	float: left;
+	width: 100%;
+}
+.page-content-inner {
+	margin: 0 328px 48px 48px;
+}
+.command {
+	display: none;
+	line-height: 33px;
+	padding-bottom: 0;
+	padding: 10px 0;
+	text-align: right;
+}
+.modal-backdrop {
+	z-index: -1;
+	visibility: hidden;
+}
+.modal-dialog {
+	margin-top: 150px;
+}
+.note-editor.fullscreen {
+	margin-top: 50px;
+}
+.question-answer-form-wrap {
+	margin-top: 10px;
+	border-top: 1px solid #EEE;
+	padding-top: 10px;
+}
+.question-answer-form-wrap .command {
+	display: block;
+}
+.answer-form {
+	margin-bottom: 10px;
+}
+.question-answer-form-wrap .item-link-avatar{
+	float: right;
+}
+.editor-box {
+	padding-top: 10px;
+}
+.note-editor {
+	border-radius: 4px;
+}
+.note-toolbar {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.note-statusbar {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.question-title-label {
+	font-size: 35px;
+}
+.question-tags-label {
+	font-size: 30px;
+}
+
+.tags:hover .delete-tag {
+	display: block;
+}
+.delete-tag {
+	color: #FFF;
+	display: none;
+	float: right;
+	padding-right: 3px;
+}
+.tags-add-button {
+	margin-left: 5px;
+}
+.add_tag_box {
+	width: 100px;
+}
+.question-content-label {
+	font-size: 35px;
+}
+.question-main-editor .command {
+	display: block;
+}
+.save-box {
+	float: right;
+	margin: 0 15px 0 0;
+	padding-top: 7px;
+	cursor: pointer;
+	text-align: right;
+}
+.question-tags-sublabel{
+	color: #878F98;
+	font-size: 10px;
+	margin-left: 10px;
+}
+.tags>a,.tags>a:hover{
+	text-decoration: none;
+}

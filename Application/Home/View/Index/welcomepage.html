@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>轩辕秘境</title>
+	<link rel="shortcut icon" href="__PUBLIC__/image/favicon.ico">
+	<script src="__PUBLIC__/jquery/jquery.min.js"></script>
+	<link href="__PUBLIC__/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- include libraries(jQuery, bootstrap, fontawesome) -->
+	<link rel="stylesheet" href="__PUBLIC__/font-awesome-4.2.0/css/font-awesome.min.css" />
+
+	<!-- include summernote css/js-->
+	<link href="__PUBLIC__/dist/css/summernote.css" rel="stylesheet">
+	<script src="__PUBLIC__/dist/js/summernote.min.js"></script>
+
+	<link href="__PUBLIC__/pagecss/Common/page.css" rel="stylesheet">
+	<link href="__PUBLIC__/pagecss/Home/home.css" rel="stylesheet">
+	<block name="injectedjs"></block>
+</head>
+<body class="harveyprince">
+	<div class="hot-question-list">
+		<div class="list-group">
+			<volist name="hot_question_list" id="singlequestion">
+				{:W('Home/questionitem',array($singlequestion['id']))}
+			</volist>
+			<div class="hot-question-icon pageicon"></div>
+		</div>
+	</div>
+	<div class="cover">
+		<div class="centerbox">
+			<div class="verticalcenter">
+				<block name="logincontent"></block>
+				<block name="signupcontent"></block>
+			</div>
+		</div>
+		<div class="pageicon icon-head-page pagehead"></div>
+		<div class="pageicon icon-text-page pagehead pagetext"></div>
+	</div>
+	
+	<script src="__PUBLIC__/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

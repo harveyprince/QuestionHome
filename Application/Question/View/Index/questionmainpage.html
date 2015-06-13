@@ -1,0 +1,133 @@
+<extend name="questionlayout"/>
+<block name="injectedcss">
+	<link href="__PUBLIC__/pagecss/Question/questionMain.css" rel="stylesheet">
+	<link href="__PUBLIC__/pace/themes/black/pace-theme-barber-shop.css" rel="stylesheet" />
+</block>
+<block name="injectedjs">
+	<script src="__PUBLIC__/pagejs/Question/questionMain.js"></script>
+	<script data-pace-options='{"ajax":true,"startOnPageLoad":false}' src="__PUBLIC__/pace/pace.min.js"></script>
+	<script src="__PUBLIC__/pagejs/Common/summernoteupload.js"></script>
+</block>
+<block name="content">
+	<div class="page-main">
+		<div class="page-content">
+			<div class="page-content-inner">
+				<div class="tag-section">
+					<div class="tag-section-inner clearfix">
+						<div class="meta-panel">
+							<volist name="taglist" id="singletag">
+								<div class="meta-item tags">
+									<a href="{:U('__ROOT__/Question/Index/Search').'?search-key='.$singletag['tag']}">{$singletag['tag']}</a>
+								</div>
+							</volist>
+							<if condition="W('Question/getQuestion',array($id))['author_id'] eq $aid">
+								<span class="main-page-nav-top">
+									<a href="{:U('__ROOT__/Question/Index/modifyQuestion').'?questionid='.$id}"><i class="fa fa-pencil fa-fw"></i>修改</a>
+								</span>
+							</if>
+						</div>
+					</div>
+				</div>
+				<div class="question-title">
+					<h2 class="item-title">
+						{:W('Question/getQuestion',array($id))['title']}
+					</h2>
+				</div>
+				<div class="question-detail">
+					<div class="votebar">
+						<button class="up questionup" url="{:U('__ROOT__/Question/Index/voteQuestion')}" target-question-id="{$id}">
+							<span class="glyphicon glyphicon-chevron-up"></span>
+							<span class="label">赞同</span>
+							<span class="count">{:W('Question/getQuestionVoteNum',array($id))}</span>
+						</button>
+						<button class="down questiondown" url="{:U('__ROOT__/Question/Index/voteQuestion')}" target-question-id="{$id}">
+							<span class="glyphicon glyphicon-chevron-down down-icon"></span>
+							<span class="label">反对，不会显示您的姓名</span>
+						</button>
+					</div>
+					<div class="question-content infocontent">
+						{:W('Question/getQuestion',array($id))['content']}
+					</div>
+				</div>
+				<div class="feed-meta">
+					<div class="item-meta clearfix">
+						<div class="meta-panel">
+							<div class="question-author-wrap">
+								<a href="{:U('__ROOT__/User/Index/userpage/user/'.W('Question/getQuestion',array($id))['author_id'])}" class="item-link-avatar">
+									<img class="list-avatar" src="{:W('Question/getQuestionAuthorHeadIcon',array($id))}">
+								</a>
+								<a href="">{:W('Question/getAuthor',array($id))}</a>
+								,
+								<strong>{:W('Question/getAuthorDes',array($id))}</strong>
+								<span class="meta-item stamp">
+									<span class="glyphicon glyphicon-dashboard"></span>
+									<?php echo date("Y-m-d H:i:s",W('Question/getQuestion',array($id))['time']) ?>
+								</span>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="answers-title">
+					<div class="answers-sorter">
+						<if condition="$order eq 'vote'">
+							<span class="lbl">按票数排序</span>
+							<a href="{:U('__ROOT__/Question/Index/questionContent').'?question='.$id}" class="lbl">按时间排序</a>
+						<else/>
+							<span class="lbl">按时间排序</span>
+							<a href="{:U('__ROOT__/Question/Index/questionContent/order/vote').'?question='.$id}" class="lbl">按票数排序</a>
+						</if>
+						<span></span>
+					</div>
+					<h3>{:W('Question/getAnswerNum',array($id))}个回答</h3>
+				</div>
+				<div class="question-answer-wrap">
+					<volist name="answerlist" id="singleansweritem">
+						{:W('Question/answeritem',array($singleansweritem['id']))}
+						<div class="divider"></div>
+					</volist>
+				</div>
+				<a href="" class="button-more">更多</a>
+				<if condition="$Think.session.harvey_user_id gt 0">
+					<div class="question-answer-form-wrap">
+						<div class="answer-form clearfix">
+							<a href="" class="item-link-avatar">
+								<img class="list-avatar" src="{:W('Question/getUserHeadIconBySession')}">
+							</a>
+							<a href="">{:W('Question/getUserNameBySession')}</a>
+							,
+							<strong>{:W('Question/getUserDesBySession')}</strong>
+							<div class="editor-box">
+								<div id="summernote" token="{$token}" aid="{$aid}" url-head="{$url_head}">输入你的评论不少于15字</div>
+							</div>
+							<div class="command clearfix">
+								<button href="javascript:;" url="{:U('__ROOT__/Question/Index/submitAnswer')}" target-question-id="{$id}" class="top-add-question submit-answer-button" style="float:right;">评论</button>
+							</div>
+						</div>
+					</div>
+				</if>
+			</div>
+		</div>
+		<div class="main-sidebar">
+			<div class="side-section">
+				<div class="side-section-inner">
+					<div class="side-nav-group">
+						<if condition="$Think.session.harvey_user_id gt 0">
+							<u1 class="side-nav">
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/draftTab')}" class="side-nav-link">我的草稿</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/questionTab')}" class="side-nav-link">我的发布</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/answerTab')}" class="side-nav-link">我的回答</a>
+								</li>
+							</u1>
+						</if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>	

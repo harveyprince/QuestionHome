@@ -1,0 +1,74 @@
+<extend name="questionlayout"/>
+<block name="summernote"></block>
+<block name="injectedcss">
+	<link href="__PUBLIC__/pagecss/Question/question.css" rel="stylesheet">
+	<if condition="$userActive">
+		<link href="__PUBLIC__/pagecss/User/user.css" rel="stylesheet">
+		<link href="__PUBLIC__/pagecss/User/useritem.css" rel="stylesheet">
+	</if>
+</block>
+<block name="injectedjs">
+	<script src="__PUBLIC__/pagejs/Question/question.js"></script>
+	<script src="__PUBLIC__/pagejs/Question/searchPage.js"></script>
+</block>
+<block name="content">
+	<div class="page-content" role="main">
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="subheader">
+					<div>
+						<span class="glyphicon glyphicon-list icon-nav"></span>
+						搜素结果
+					</div>
+					<div class="har-tabs">
+						<ul class="nav nav-tabs">
+							<li class="<?php if($questionActive){echo 'active';} ?>">
+								<a href="{:U('__ROOT__/Question/Index/Search')}?search-key={$search_key}">问题</a>
+							</li>
+							<li class="<?php if($userActive){echo 'active';} ?>">
+								<a href="{:U('__ROOT__/Question/Index/SearchUser')}?search-key={$search_key}">用户</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="main-feed-con navigable" data-feedtype="topstory" data-widget="navigable">
+					<if condition="$questionActive">
+					<volist name="questionlist" id="singlequestionitem">
+						{:W('Question/questionitem',array($singlequestionitem['id']))}
+						<div class="divider"></div>
+					</volist>
+					</if>
+					<if condition="$userActive">
+					<volist name="userlist" id="singleuseritem">
+						{:W('Question/useritem',array($singleuseritem['id']))}
+						<div class="divider"></div>
+					</volist>
+					</if>
+					<a href="javascript:;" page="1" url="{:U('__ROOT__/Question/Index/searchMore')}" search-key="{$search_key}" search-type="{$search_type}" class="button-more search-more">更多</a>
+				</div>
+			</div>
+		</div>
+		<div class="main-sidebar">
+			<div class="side-section">
+				<div class="side-section-inner">
+					<div class="side-nav-group">
+						<if condition="$Think.session.harvey_user_id gt 0">
+							<u1 class="side-nav">
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/draftTab')}" class="side-nav-link">我的草稿</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/questionTab')}" class="side-nav-link">我的发布</a>
+								</li>
+								<li class="side-nav-li">
+									<a href="{:U('__ROOT__/User/Index/answerTab')}" class="side-nav-link">我的回答</a>
+								</li>
+							</u1>
+						</if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>
